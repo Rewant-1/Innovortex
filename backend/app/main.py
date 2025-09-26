@@ -1,5 +1,6 @@
 import asyncio
 import logging
+import os
 from typing import Any, Dict, List, Optional, Tuple
 
 import httpx
@@ -14,12 +15,38 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(level
 
 app = FastAPI(title="EcoImpact Workflow API", version="2.0.0")
 
-ALLOWED_ORIGINS = [
+
+def _parse_env_csv(name: str) -> List[str]:
+    raw_value = os.getenv(name, "")
+    if not raw_value:
+        return []
+    return [item.strip() for item in raw_value.split(",") if item.strip()]
+
+
+def _combine_regexes(regexes: List[str]) -> Optional[str]:
+    patterns = [pattern for pattern in regexes if pattern]
+    if not patterns:
+        return None
+    if len(patterns) == 1:
+        return patterns[0]
+    return "|".join(f"(?:{pattern})" for pattern in patterns)
+
+
+DEFAULT_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
 
-ALLOWED_ORIGIN_REGEX = r"https://.*\.railway\.app"
+DEFAULT_ALLOWED_ORIGIN_REGEXES = [
+    r"https://.*\.railway\.app",
+    r"https://.*\.vercel\.app",
+]
+
+CUSTOM_ALLOWED_ORIGINS = _parse_env_csv("CORS_ALLOWED_ORIGINS")
+CUSTOM_ALLOWED_REGEXES = _parse_env_csv("CORS_ALLOWED_ORIGIN_REGEXES")
+
+ALLOWED_ORIGINS = DEFAULT_ALLOWED_ORIGINS + CUSTOM_ALLOWED_ORIGINS
+ALLOWED_ORIGIN_REGEX = _combine_regexes(DEFAULT_ALLOWED_ORIGIN_REGEXES + CUSTOM_ALLOWED_REGEXES)
 
 app.add_middleware(
     CORSMiddleware,
