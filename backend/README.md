@@ -1,13 +1,13 @@
-# EcoImpact Workflow Backend (Hackathon Mock)
+# EcoImpact Workflow Backend (Sandbox)
 
-This FastAPI service simulates the entire EcoImpactWorkflow with hard-coded data so you can demo the product without live API keys. It powers the Next.js frontend and exposes extra endpoints for the marketplace and playbook pages.
+This FastAPI service simulates the entire EcoImpactWorkflow with staged data so you can demo the product without live API keys. It powers the Next.js frontend and exposes extra endpoints for the marketplace and playbook pages.
 
 ## What’s inside
 
 - **Framework**: FastAPI + Uvicorn.
-- **Mocked orchestration**: The `/workflow` endpoint validates inputs, fabricates emissions + weather values, and runs a simulated Gemini retry loop. No real network calls are made.
+- **Simulated orchestration**: The `/workflow` endpoint validates inputs, fabricates emissions + weather values, and runs a simulated Gemini retry loop. No real network calls are made.
 - **Additional APIs** supporting the frontend narrative:
-  - `GET /offset-projects` → mocked crowdsourced marketplace listings.
+  - `GET /offset-projects` → sandbox crowdsourced marketplace listings.
   - `GET /strategy-library` → AI mitigation strategies + playbooks.
   - `GET /executive-snapshot` → executive summary stats.
   - `POST /api/result` → optional hook the frontend uses to “log” results.
@@ -23,7 +23,7 @@ pip install -r requirements.txt
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-No API keys are required for the mocked workflow. Optional environment variables still exist for future upgrades, but can be ignored today.
+No API keys are required for the simulated workflow. Optional environment variables still exist for future upgrades, but can be ignored today.
 
 ## Workflow contract
 
@@ -67,7 +67,7 @@ pytest
 
 Tests cover:
 
-- Happy path (approve decision, mocked data returned).
+- Happy path (approve decision, simulated data returned).
 - Validation errors for bad input.
 - Escalation when simulated confidence stays low.
 
@@ -82,4 +82,4 @@ Tests cover:
 3. **Production entry point**
    - Use `uvicorn app.main:app --host 0.0.0.0 --port $PORT` or `gunicorn -k uvicorn.workers.UvicornWorker app.main:app`.
 
-Because all integrations are mocked, there are no external secrets to manage until you decide to wire real services back in.
+Because all integrations are simulated, there are no external secrets to manage until you decide to wire real services back in.
