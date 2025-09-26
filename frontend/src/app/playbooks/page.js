@@ -91,10 +91,10 @@ export default function PlaybooksPage() {
             AI Mitigation Playbooks
           </div>
           <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            Plug-and-play strategies your judges can feel — powered by Gemini + RAG.
+            Plug-and-play strategies your leadership can deploy — powered by Gemini + RAG.
           </h1>
           <p className="text-lg text-white/70 sm:max-w-3xl">
-            Show how the workflow converts emissions insights into action. These playbooks are mocked, but demonstrate structured plans, AI assistance, and team alignment.
+            Show how the workflow converts emissions insights into action. These playbooks run on staged data, but demonstrate structured plans, AI assistance, and team alignment.
           </p>
         </header>
 
@@ -124,7 +124,7 @@ export default function PlaybooksPage() {
           <div className="rounded-3xl border border-cyan-400/40 bg-cyan-400/10 p-6 text-white">
             <h3 className="text-lg font-semibold">RAG-powered mitigation planner</h3>
             <p className="mt-3 text-sm text-cyan-50">
-              Pair Gemini with a knowledge base to deliver defensible, data-backed recommendations. Keep it mocked, but highlight the architecture.
+              Pair Gemini with a knowledge base to deliver defensible, data-backed recommendations. Keep it sandboxed, but highlight the architecture.
             </p>
             <ul className="mt-4 grid gap-2 text-sm text-white/80 sm:grid-cols-2">
               {RAG_CALL_TO_ACTION.map((item) => (
@@ -138,7 +138,7 @@ export default function PlaybooksPage() {
             <div className="rounded-3xl border border-white/10 bg-white/10 p-6">
               <h4 className="text-sm font-semibold text-white">Demo flow</h4>
               <p className="mt-2">
-                Run a forecast → Open this page → highlight the AI playbook → invite judges to imagine uploading their own PDFs.
+                Run a forecast → Open this page → highlight the AI playbook → invite stakeholders to imagine uploading their own PDFs.
               </p>
             </div>
             <div className="rounded-3xl border border-white/10 bg-white/10 p-6">
@@ -146,7 +146,7 @@ export default function PlaybooksPage() {
               <p className="mt-2">
                 Show the <Link href="/executive" className="text-cyan-200 hover:text-cyan-100">Executive mode</Link> page to prove storytelling for leaders.
               </p>
-              <p className="mt-3 text-xs uppercase tracking-wide text-white/40">State: {state === "loading" ? "loading" : "mocked API"}</p>
+              <p className="mt-3 text-xs uppercase tracking-wide text-white/40">State: {state === "loading" ? "loading" : "sandbox API"}</p>
             </div>
           </aside>
         </section>

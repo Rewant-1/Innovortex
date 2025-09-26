@@ -1,13 +1,13 @@
 # EcoImpactApp Frontend
 
-Next.js App Router UI that feels like a hackathon-winning climate tech project. Everything is mocked so you can demo confidently without external APIs.
+Next.js App Router UI that feels like a production-ready climate tech platform. Everything runs on sandbox data so you can demo confidently without external APIs.
 
 ## Highlights
 
 - **Command Center** (`/`): launch the carbon workflow, view simulated Gemini attempts, and inspect the suggested playbook.
-- **Offset Marketplace** (`/marketplace`): curated mock projects with pricing, SDG badges, and a fake checkout call-to-action.
+- **Offset Marketplace** (`/marketplace`): curated sample projects with pricing, SDG badges, and a staged checkout call-to-action.
 - **AI Playbooks** (`/playbooks`): Gemini + RAG strategy cards explaining how mitigation plans would be executed.
-- **Executive Mode** (`/executive`): investor-ready summary with mocked KPIs and storytelling prompts.
+- **Executive Mode** (`/executive`): investor-ready summary with staged KPIs and storytelling prompts.
 - **API logger**: `/api/result` writes results to `.ecoimpact/results.log` so the backend “post result” step succeeds.
 
 ## Getting started
@@ -30,7 +30,7 @@ npm run dev
 | Route | Purpose |
 | --- | --- |
 | `/` | Forecast launcher with scenario presets, emissions/weather cards, Gemini attempt timeline, and playbook. |
-| `/marketplace` | Mocked offset marketplace showcasing monetisation potential. |
+| `/marketplace` | Sandbox offset marketplace showcasing monetisation potential. |
 | `/playbooks` | AI mitigation strategies + RAG explainer grid. |
 | `/executive` | Executive snapshot with wins, focus areas, and a storytelling script. |
 
@@ -59,12 +59,12 @@ Because the frontend is static + API routes:
 
 ### Deploying backend + frontend separately
 
-- Deploy the mocked FastAPI service (Render/Fly.io/Azure Container Apps) listening on `/:8000`.
+- Deploy the sandbox FastAPI service (Render/Fly.io/Azure Container Apps) listening on `/:8000`.
 - Deploy the Next.js app (Vercel/Netlify). Set `NEXT_PUBLIC_BACKEND_URL` to the backend public URL.
 - Optional: run `npm run build && npm start` locally as a smoke test before shipping.
 
 ## Extending later
 
-- Swap the mocked endpoints for real APIs by updating `app/main.py`.
+- Swap the sandbox endpoints for real APIs by updating `app/main.py`.
 - Wire Stripe Checkout or other payment provider for a live marketplace flow.
-- Replace fallback arrays with data from a database or CMS for judge-ready demos.
+- Replace fallback arrays with data from a database or CMS for stakeholder-ready launches.

@@ -80,7 +80,7 @@ export default function ExecutivePage() {
             Ready-to-share snapshot for investors and leadership.
           </h1>
           <p className="text-lg text-white/70 sm:max-w-3xl">
-            End the demo with a punchy recap. These numbers are mocked, but the experience proves you can translate operations into impact narratives.
+            Close the conversation with a punchy recap. These numbers rely on staged data, but the experience proves you can translate operations into impact narratives.
           </p>
         </header>
 
@@ -129,7 +129,7 @@ export default function ExecutivePage() {
               <p className="mt-2">“Back our hydrogen + marketplace expansion to halve footprint within 6 months.”</p>
             </div>
           </div>
-          <p className="mt-6 text-xs uppercase tracking-wide text-white/60">Data source: {state === "loading" ? "loading" : "mocked API"}</p>
+          <p className="mt-6 text-xs uppercase tracking-wide text-white/60">Data source: {state === "loading" ? "loading" : "sandbox API"}</p>
         </section>
       </div>
     </main>

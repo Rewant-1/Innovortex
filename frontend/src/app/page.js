@@ -42,7 +42,7 @@ const OPPORTUNITY_TRACKS = [
   {
     title: "Offset Marketplace",
     summary: "Tokenize credits and co-fund community climate innovation.",
-    tags: ["Stripe mocked", "Impact scoring", "SDG alignment"],
+    tags: ["Stripe-ready", "Impact scoring", "SDG alignment"],
   },
   {
     title: "AI Mitigation Copilot",
@@ -155,7 +155,7 @@ export default function Home() {
           <section className="grid gap-6 lg:grid-cols-[2fr,1fr]">
             <div className="space-y-8">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs uppercase tracking-wider text-white/70">
-                EcoImpactWorkflow • Hackathon Edition
+                EcoImpactWorkflow • Pilot Studio
               </span>
               <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
                 Forecast carbon, spin up mitigations, and ship offsets in one command center.
@@ -165,9 +165,6 @@ export default function Home() {
               </p>
 
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {HERO_STATS.map((stat) => (
-                  <StatCard key={stat.label} {...stat} />
-                ))}
               </div>
             </div>
             <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-white/80">
@@ -353,7 +350,7 @@ export default function Home() {
                 ))}
               </div>
               <div className="rounded-2xl border border-cyan-400/40 bg-cyan-400/10 p-4 text-xs text-cyan-100">
-                <p className="font-medium text-cyan-100">Show this in your demo</p>
+                <p className="font-medium text-cyan-100">Share this with stakeholders</p>
                 <p className="mt-2 text-cyan-50">
                   Jump to the <Link href="/marketplace" className="underline">crowdsourced offset marketplace</Link> and <Link href="/executive" className="underline">exec-ready snapshot</Link> to tell the full story.
                 </p>

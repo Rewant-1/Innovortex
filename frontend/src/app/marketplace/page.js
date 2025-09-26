@@ -92,7 +92,7 @@ export default function MarketplacePage() {
             Let users co-invest in climate projects and attach offsets to every forecast.
           </h1>
           <p className="text-lg text-white/70 sm:max-w-3xl">
-            Showcase a tangible path from forecasting to action. These listings are mocked, but the API + UI prove the revenue model. Plug Stripe or crypto rails later without rewriting the experience.
+            Showcase a tangible path from forecasting to action. These listings run on staged data, but the API + UI prove the revenue model. Plug Stripe or crypto rails later without rewriting the experience.
           </p>
 
           <div className="flex flex-wrap gap-6 text-sm text-white/60">
@@ -106,7 +106,7 @@ export default function MarketplacePage() {
             </div>
             <div>
               <span className="text-3xl font-semibold text-white">$12.8k</span>
-              <p className="mt-1 text-xs uppercase tracking-wide">Mocked volume processed</p>
+              <p className="mt-1 text-xs uppercase tracking-wide">Sandbox volume processed</p>
             </div>
           </div>
         </header>
@@ -151,7 +151,7 @@ export default function MarketplacePage() {
                   type="button"
                   className="mt-6 rounded-full border border-cyan-400/40 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-100 hover:bg-cyan-400/20"
                 >
-                  Mock checkout →
+                  Preview checkout →
                 </button>
               </article>
             );
@@ -164,21 +164,21 @@ export default function MarketplacePage() {
             <ul className="mt-4 space-y-3">
               <li>• Start with a forecast on the command center page.</li>
               <li>• Jump here to show how users can neutralize remaining emissions.</li>
-              <li>• Point out mocked Stripe integration — real keys plug in later.</li>
-              <li>• Highlight SDG alignment badges to win ESG judges.</li>
+              <li>• Point out the prewired Stripe integration — production keys drop in later.</li>
+              <li>• Highlight SDG alignment badges to satisfy ESG scorecards.</li>
             </ul>
           </div>
           <div className="space-y-3 text-xs text-white/60">
             <div className="rounded-3xl border border-white/10 bg-white/10 p-6">
               <h4 className="text-sm font-semibold text-white">Why it matters</h4>
               <p className="mt-3">
-                Hackathon judges love monetization + climate impact. This marketplace gives you both, without needing live infra.
+                Investors want monetization plus climate impact. This marketplace gives you both, without needing live infrastructure.
               </p>
             </div>
             <div className="rounded-3xl border border-cyan-400/40 bg-cyan-400/10 p-6 text-white/80">
               <h4 className="text-sm font-semibold text-white">State</h4>
               <p className="mt-3 text-xs uppercase tracking-wide text-white/70">
-                Data source: {state === "loading" ? "loading" : "mocked API"}
+                Data source: {state === "loading" ? "loading" : "sandbox API"}
               </p>
             </div>
           </div>

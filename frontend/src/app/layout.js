@@ -21,9 +21,9 @@ const NAV_LINKS = [
 ];
 
 export const metadata = {
-  title: "EcoImpactApp – Carbon Intelligence Hackathon Stack",
+  title: "EcoImpactApp – Carbon Intelligence Platform",
   description:
-    "Mocked carbon forecasting workflow with AI mitigations, offset marketplace, and executive-ready storytelling.",
+    "Carbon forecasting, AI mitigations, offset marketplace, and executive-ready storytelling in one sandboxed experience.",
 };
 
 export default function RootLayout({ children }) {
@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
                 ))}
               </div>
               <span className="hidden text-[11px] uppercase tracking-widest text-white/40 sm:inline">
-                Hackathon-ready mock
+                Carbon intelligence studio
               </span>
             </div>
           </nav>
@@ -57,11 +57,11 @@ export default function RootLayout({ children }) {
 
           <footer className="border-t border-white/5 bg-slate-950/80">
             <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-6 py-8 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
-              <p>EcoImpactApp · no live keys · ready for demo storytelling</p>
+              <p>EcoImpactApp · sandbox mode · ready for impact storytelling</p>
               <div className="flex flex-wrap gap-3">
-                <span>Workflow API mock</span>
+                <span>Workflow API sandbox</span>
                 <span>Gemini loop simulation</span>
-                <span>Offset marketplace prototype</span>
+                <span>Offset marketplace preview</span>
               </div>
             </div>
           </footer>
