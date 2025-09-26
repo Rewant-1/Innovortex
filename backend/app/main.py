@@ -17,14 +17,14 @@ app = FastAPI(title="EcoImpact Workflow API", version="2.0.0")
 ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    # Railway deployment domains
-    "https://*.railway.app",
-    "https://*.up.railway.app",
 ]
+
+ALLOWED_ORIGIN_REGEX = r"https://.*\.railway\.app"
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=ALLOWED_ORIGINS,
+    allow_origin_regex=ALLOWED_ORIGIN_REGEX,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
